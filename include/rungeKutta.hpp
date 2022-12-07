@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstdarg>
 #include <string>
 #include <fstream>
 
@@ -11,7 +12,7 @@ public:
 	const void Step();
 	const void SaveValues(std::string filename);
 	const void SaveTSteps(std::string filename);
-	const void SetParameters(const std::vector<float> &params);
+	const void SetParameters(const int num, ...);
 	const void UpdateParameter(const unsigned int index, const float value);
 	const float GetLast(); 
 private:
