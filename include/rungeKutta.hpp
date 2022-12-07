@@ -1,9 +1,6 @@
 #include <iostream>
 #include <vector>
-<<<<<<< HEAD
-=======
 #include <cstdarg>
->>>>>>> refactor
 #include <string>
 #include <fstream>
 
@@ -15,11 +12,7 @@ public:
 	const void Step();
 	const void SaveValues(std::string filename);
 	const void SaveTSteps(std::string filename);
-<<<<<<< HEAD
-	const void SetParameters(const std::vector<float> &params);
-=======
 	const void SetParameters(const int num, ...);
->>>>>>> refactor
 	const void UpdateParameter(const unsigned int index, const float value);
 	const float GetLast(); 
 private:

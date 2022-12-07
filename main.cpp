@@ -28,26 +28,6 @@ int main()
 	unsigned int numSteps = 10000;
 
 	RungeKutta x(dxdt, xStart, tStart, tStep);
-<<<<<<< HEAD
-	std::vector<float> xParams;
-	xParams.push_back(10);
-	xParams.push_back(yStart);
-	x.SetParameters(xParams);
-
-	RungeKutta y(dydt, yStart, tStart, tStep);
-	std::vector<float> yParams;
-	yParams.push_back(28.0f);
-	yParams.push_back(xStart);
-	yParams.push_back(zStart);
-	y.SetParameters(yParams);
-
-	RungeKutta z(dzdt, zStart, tStart, tStep);
-	std::vector<float> zParams;
-	zParams.push_back(xStart);
-	zParams.push_back(yStart);
-	zParams.push_back(8.0f/3.0f);
-	z.SetParameters(zParams);
-=======
 	x.SetParameters(2, 10.0f, yStart);
 
 	RungeKutta y(dydt, yStart, tStart, tStep);
@@ -55,8 +35,7 @@ int main()
 
 	RungeKutta z(dzdt, zStart, tStart, tStep);
 	z.SetParameters(3, xStart, yStart, 8.0f/3.0f);
->>>>>>> refactor
-
+	
 	for(unsigned int i=0; i<numSteps; i++)
 	{
 		x.UpdateParameter(1, y.GetLast());
@@ -69,10 +48,6 @@ int main()
 		z.Step();
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> refactor
 	x.SaveTSteps("tsteps.txt");
 
 	x.SaveValues("xvalues.txt");
