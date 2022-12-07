@@ -84,9 +84,21 @@ const void RungeKutta::SaveTSteps(std::string filename)
 
 }
 
+<<<<<<< HEAD
 const void RungeKutta::SetParameters(const std::vector<float> &params)
 {
 	m_Param = params;
+=======
+const void RungeKutta::SetParameters(const int num, ...)
+{
+	va_list args;
+	va_start(args, num);
+	for(int i=0; i<num; i++)
+	{
+		m_Param.push_back(va_arg(args,double));
+	}
+	va_end(args);
+>>>>>>> refactor
 }
 
 const void RungeKutta::UpdateParameter(const unsigned int index, const float value)
